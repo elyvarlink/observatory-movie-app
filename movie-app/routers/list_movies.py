@@ -7,7 +7,8 @@ router = APIRouter()
 
 
 
-
+# This will be a global variable that will hold the movie data. It can be accessed by other routers as well.
+# this is temporary data, as we will eventually be using a database to store the movie data. This is just for testing purposes.
 movie_data = [
     {"id": 1, "title": "Spirit", "year": 1995},
     {"id": 2, "title": "White Chicks", "year": 1996},
@@ -16,7 +17,7 @@ movie_data = [
     {"id": 5, "title": "Wine", "year": 1999}
 ]
 
-
+#This enpoints returns all the movies in the movie_data list.
 @router.get("/movies")
 async def get_movies():
     return movie_data
